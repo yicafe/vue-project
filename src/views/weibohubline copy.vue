@@ -1,0 +1,84 @@
+<template>
+    <div class="max-w-lg p-4 mx-auto bg-white rounded-lg shadow-lg">
+      <!-- Header -->
+      <div class="flex items-center">
+        <img
+          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          alt="avatar"
+          class="w-10 h-10 rounded-full"
+        />
+        <div class="ml-3">
+          <div class="flex items-center">
+            <span class="text-sm font-bold">螺蛳粉</span>
+            <span class="ml-1 text-xs text-yellow-500">💛</span>
+          </div>
+          <p class="text-xs text-gray-500">9小时前 歌手</p>
+        </div>
+        <button class="px-3 py-1 ml-auto text-sm text-orange-500 border border-orange-500 rounded-full">
+          +关注
+        </button>
+      </div>
+  
+      <!-- Content -->
+      <div class="mt-4">
+        <p class="text-sm leading-relaxed text-gray-800">
+          来算算多久没有单独合照过了这位朋友？哈哈哈
+          开心开心
+          <a href="#" class="text-blue-500">@卡布叻_周深</a>
+          <br />
+          <span class="text-blue-500">#张碧晨DayDayUP##七号打歌中心#</span>
+        </p>
+      </div>
+  
+      <!-- Media -->
+      <div class="mt-3">
+        <div class="grid grid-cols-2 gap-2">
+          <div class="relative">
+            <img
+              src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+              alt="media"
+              class="w-full rounded-lg"
+            />
+            <div class="absolute inset-0 flex items-center justify-center bg-black rounded-lg bg-opacity-30">
+              <span class="text-sm text-white">🎥 00:14</span>
+            </div>
+          </div>
+          <img
+            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+            alt="media"
+            class="w-full rounded-lg"
+          />
+        </div>
+      </div>
+  
+      <!-- Footer -->
+      <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center space-x-1">
+            <span>👍</span>
+            <span>13.1万</span>
+          </button>
+          <button class="flex items-center space-x-1">
+            <span>💬</span>
+            <span>1.4万</span>
+          </button>
+          <button class="flex items-center space-x-1">
+            <span>🔗</span>
+            <span>5.3万</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <router-link to="/">跳转home</router-link>
+  </template>
+  
+  <script>
+  export default {
+    name: "WeiboPost",
+  };
+  </script>
+  
+  <style>
+  /* 可根据需求添加全局或局部样式 */
+  </style>
+  

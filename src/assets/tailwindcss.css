@@ -1,0 +1,46 @@
+/* 引入 TailwindCSS 的基础样式--------styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 添加自定义的 CSS 样式 */
+
+/* 设置全局背景色 */
+body {
+  background-color: #f9fafb; /* 浅灰色背景 */
+  font-family: 'Inter', sans-serif; /* 使用现代字体 */
+}
+
+/* 设置页面容器的宽度和居中对齐 */
+.container {
+  @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8; /* 设置容器最大宽度，自动左右居中，适配不同屏幕 */
+}
+
+/* 常用按钮样式 */
+.btn {
+  @apply px-4 py-2 font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+
+/* 提示框样式 */
+.alert {
+  @apply p-4 mb-4 text-sm text-red-700 bg-red-100 border border-red-400 rounded-lg;
+}
+
+/* 输入框样式 */
+.input {
+  @apply block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* 页脚样式 */
+footer {
+  @apply py-4 mt-8 text-white bg-gray-800;
+}
+
+/* 头部导航条样式 */
+.navbar {
+  @apply flex items-center justify-between p-4 text-white bg-blue-600;
+}
+
+.navbar .nav-link {
+  @apply px-4 py-2 text-white rounded hover:bg-blue-500;
+}
