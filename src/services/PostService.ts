@@ -18,6 +18,7 @@ export const getPosts = async (): Promise<Post[]> => {
 
     // 假设你的 Strapi 后端有一个公共的域名用于处理媒体文件
     const baseUrl = 'http://localhost:1337'; // 请替换成你的 Strapi 域名
+    const baseUrl = 'https://my-strapi-project-h7zt.onrender.com/'; // 请替换成你的 Strapi 域名
 
     return response.data.data.map((post: any) => ({
       id: post.id, // 帖子 ID
