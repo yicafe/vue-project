@@ -109,7 +109,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
   { name: 'Home', href: '#', current: false },
-  { name: 'Archive', href: 'http://localhost:5173/#/weibohubline', current: false },
+  { name: 'Archive', href: 'https://cliooz.com', current: false },
   { name: 'PostList', href: 'https://vue-project-sable.vercel.app/#/PostList', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
