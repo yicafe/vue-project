@@ -109,9 +109,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
   { name: 'Home', href: '#', current: false },
-  { name: 'demo', href: 'https://vue-project-xi-five.vercel.app//#/weibohubline', current: false },
-  { name: 'PostList', href: 'https://vue-project-xi-five.vercel.app/#/PostList', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'demo', href: 'http://localhost:5173/#/weibohubline', current: false },
+  { name: 'PostList', href: 'https://cliooz.cn/#/PostList', current: false },
+  { name: 'Calendar', href: 'https://vue-project-xi-five.vercel.app/#/PostList', current: false },
 ]
 </script>
 
