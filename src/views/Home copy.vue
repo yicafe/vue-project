@@ -1,15 +1,14 @@
 <template>
-  <div class="relative overflow-hidden ">
+  <div class="relative overflow-hidden bg-white">
     <div class="pt-16 pb-80 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
       <div class="relative px-4 mx-auto max-w-7xl sm:static sm:px-6 lg:px-8">
         <div class="sm:max-w-lg">
           <img alt="Vue logo" class="logo" src="https://cliooz.com/logo.png" width="125" height="125" />
-          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            {{ language === 'en' ? 'Hi, Finally meet you.' : '嗨，终于见到你了。' }}
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Hi, Finally meet you.
           </h1>
-          <p class="mt-4 text-xl text-gray-600">
-            {{ language === 'en' ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' : '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
-          </p>
+          <p class="mt-4 text-xl text-gray-600">时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅</p>
+          <h3 class="text-gray-400">Time is like the water in s sponge. You will have it while you squeeze. - Lu Xun
+          </h3>
         </div>
         <div>
           <div class="mt-10">
@@ -58,28 +57,11 @@
             </div>
 
             <a href="#"
-              class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">
-              {{ language === 'en' ? 'Shop Collection' : '浏览商品' }}
-            </a>
+              class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">Shop
+              Collection</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { inject } from 'vue';
-
-// 注入全局语言状态
-const language = inject('language');
-
-// 切换语言的方法
-const toggleLanguage = () => {
-  language.value = language.value === 'en' ? 'zh' : 'en';
-};
-</script>
-
-<style scoped>
-/* 添加一些额外样式（如果需要） */
-</style>

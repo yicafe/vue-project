@@ -103,8 +103,7 @@
 
     <!-- 列表 -->
     <main class="flex-grow py-8">
-      <!--<router-view></router-view>-->
-      <SideMenu></SideMenu>
+      <router-view></router-view>
     </main>
 
     <!-- 底部 -->
@@ -131,6 +130,7 @@ const navigation = [
   { name: 'demo', href: ' http://localhost:5173//#/demo', current: false },
   { name: 'PostList', href: ' http://localhost:5173//#/PostList', current: false },
   { name: 'About', href: ' http://localhost:5173//#/About', current: false },
+  { name: 'DSChatWebPage', href: ' http://localhost:5173//#/DSChatWebPage', current: false },
 ];
 
 // 在父组件中提供语言状态

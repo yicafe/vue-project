@@ -5,11 +5,11 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import register from '../views/register.vue'
 import Profile from '../views/Profile.vue'
-import weibohubline from '../views/weibohubline.vue'
-import bltv from '../views/bltv.vue'
+import demo from '../views/demo.vue'
+import About from '../views/About.vue'
 import PostList from '../views/PostList.vue'
 import DropdownsSimple from '../views/DropdownsSimple.vue'
-
+import SideMenu from '../components/SideMenu.vue'
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -33,14 +33,14 @@ const routes = [
         component: Profile // 对应的组件
     },
     {
-        path: '/weibohubline', // 注册页
-        name: 'weibohubline',
-        component: weibohubline // 对应的组件
+        path: '/demo', // 注册页
+        name: 'demo',
+        component: demo // 对应的组件
     },
     {
-        path: '/bltv', // 注册页
-        name: 'bltv',
-        component: bltv // 对应的组件
+        path: '/About', // 注册页
+        name: 'About',
+        component: About // 对应的组件
     },
     {
         path: '/PostList', // 注册页
@@ -51,7 +51,12 @@ const routes = [
         path: '/DropdownsSimple', // 注册页
         name: 'DropdownsSimple',
         component: DropdownsSimple // 对应的组件
-    }
+    },
+    {
+        path: '/SideMenu', // 注册页
+        name: 'SideMenu',
+        component: SideMenu // 对应的组件
+    },
     // ...
 ]
 
@@ -60,6 +65,15 @@ const router = createRouter({
     history: createWebHashHistory(), // 指定 history 模式，这里采用的是 hash 模式
     routes // 定义路由数组，相当于 routes: routes 的简写模式
 })
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth && !localStorage.getItem('jwt')) {
+      next('/')
+    } else {
+      next()
+    }
+  })
 
 // ES6 模块导出语句，它用于将 router 对象导出，以便其他文件可以导入和使用这个对象
 export default router

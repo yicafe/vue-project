@@ -7,5 +7,6 @@ import router from "./router";
 
 createApp(App).use(router);
 createApp(App).mount('#app');
+
 //和上面的重复
 createApp(App).use(router).mount('#app')

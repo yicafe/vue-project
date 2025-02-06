@@ -17,7 +17,9 @@
             </div>
             <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
               <div class="flex items-center shrink-0">
-                <img class="w-auto h-8" src="https://cliooz.com/logo.png?color=indigo&shade=500" alt="Your Company" />
+                  <!--<img class="w-auto h-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"-->
+                  <img class="w-auto h-8" src="https://cliooz.com/logo.png?color=indigo&shade=500"
+                  alt="Your Company" />
               </div>
               <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
@@ -28,9 +30,6 @@
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <!-- 语言切换组件 -->
-              <LanguageSwitcher />
-
               <button type="button"
                 class="relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5" />
@@ -57,32 +56,21 @@
                   <MenuItems
                     class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none">
                     <MenuItem v-slot="{ active }">
-                      <a href="#"
-                        :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        <router-link to="Profile" class="text-blue-500 hover:text-blue-700">
-                          {{ language === 'en' ? 'Your Profile' : '个人资料' }}
-                        </router-link>
-                      </a>
+                    <a href="#"
+                      :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']"><router-link to="Profile" class="text-blue-500 hover:text-blue-700">Your Profile</router-link></a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <a href="#"
-                        :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        {{ language === 'en' ? 'Settings' : '设置' }}
-                      </a>
+                    <a href="#"
+                      :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <a href="#"
-                        :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        {{ language === 'en' ? 'Sign out' : '退出登录' }}
-                      </a>
+                    <a href="#"
+                      :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign
+                      out</a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <a href="#"
-                        :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        <router-link to="login" class="text-blue-500 hover:text-blue-700">
-                          {{ language === 'en' ? 'Login' : '登录' }}
-                        </router-link>
-                      </a>
+                    <a href="#"
+                      :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']"><router-link to="login" class="text-blue-500 hover:text-blue-700">登录</router-link></a>
                     </MenuItem>
                   </MenuItems>
                 </transition>
@@ -103,15 +91,14 @@
 
     <!-- 列表 -->
     <main class="flex-grow py-8">
-      <!--<router-view></router-view>-->
-      <SideMenu></SideMenu>
+      <router-view></router-view>
     </main>
 
     <!-- 底部 -->
     <footer class="#">
       <div class="container mx-auto text-center text-gray-500">
         <p>
-          {{ language === 'en' ? '© 2023 My Personal Website. All rights reserved.' : '© 2023 我的个人网站。保留所有权利。' }}
+          © 2023 My Personal Website. All rights reserved.
         </p>
       </div>
     </footer>
@@ -119,31 +106,17 @@
 </template>
 
 <script setup>
-import { provide,ref, onMounted } from 'vue';
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline';
-import LanguageSwitcher from './components/LanguageSwitcher.vue'; // 引入语言切换组件
-import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
-// 导航栏数据
 const navigation = [
   { name: 'Home', href: '#', current: false },
-  { name: 'demo', href: ' http://localhost:5173//#/demo', current: false },
-  { name: 'PostList', href: ' http://localhost:5173//#/PostList', current: false },
-  { name: 'About', href: ' http://localhost:5173//#/About', current: false },
-];
-
-// 在父组件中提供语言状态
-const language = ref('en'); // 默认语言为英文
-provide('language', language);
-
-// 监听语言切换事件
-onMounted(() => {
-  window.addEventListener('language-change', (event) => {
-    language.value = event.detail;
-  });
-});
+  { name: 'demo', href: 'http://localhost:5173/#/demo', current: false },
+  { name: 'PostList', href: 'https://cliooz.cn/#/PostList', current: false },
+  { name: 'About', href: 'http://localhost:5173/#/About', current: false },
+]
 </script>
+
 
 <style scoped>
 /* 添加一些额外样式（如果需要） */
