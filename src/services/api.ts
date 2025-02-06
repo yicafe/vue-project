@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:1337/api'; // 修改为你的 Strapi 地址
+//const API_URL = 'http://localhost:1337/api'; // 修改为你的 Strapi 地址
+const API_URL = 'https://my-strapi-project-h7zt.onrender.com'; // 修改为你的 Strapi 地址
 
 export const api = axios.create({
   baseURL: API_URL,
