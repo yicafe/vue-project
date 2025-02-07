@@ -1,14 +1,19 @@
 <template>
   <div class="flex min-h-screen">
     <!-- 菜单栏 -->
-    <div class="h-full text-white transition-all duration-300 ease-in-out bg-gray-800 w-50" :class="{ '-ml-64': !isMenuOpen }">
+    <div class="h-full text-black transition-all duration-200 ease-in-out bg-gray-300 w-50" :class="{ '-ml-64': !isMenuOpen }">
       <div class="p-4 pt-16">
         <h2 class="text-lg font-semibold">🍒🦭</h2>
+        <div>
+          <Login></Login>
+        </div>
         <ul class="mt-4 space-y-2">
-          <li><a href="#" class="block p-2 rounded hover:bg-gray-700">首页</a></li>
-          <li><a href="#" class="block p-2 rounded hover:bg-gray-700">发现</a></li>
-          <li><a href="#" class="block p-2 rounded hover:bg-gray-700">消息</a></li>
-          <li><a href="#" class="block p-2 rounded hover:bg-gray-700">个人中心</a></li>
+          <li><a href="https://cliooz.cn/#/PostList" class="block p-2 rounded bg-violet-300 hover:bg-violet-400">最新帖子</a></li>
+          <!--
+          <li><a href="#" class="block p-2 rounded hover:bg-gray-400">发现</a></li>
+          <li><a href="#" class="block p-2 rounded hover:bg-gray-400">消息</a></li>
+          <li><a href="#" class="block p-2 rounded hover:bg-gray-400">个人中心</a></li>
+          -->
         </ul>
       </div>
     </div>
@@ -45,10 +50,11 @@
 </template>
 
 <script setup>
+import Login from '@/views/Login.vue';
 import { ref } from 'vue';
 
-// 菜单栏状态，初始值为 true（默认显示）
-const isMenuOpen = ref(false);
+// 菜单栏状态，初始值为 true（默认显示）false 为隐藏
+const isMenuOpen = ref(true);
 
 // 切换菜单栏显示/隐藏
 const toggleMenu = () => {

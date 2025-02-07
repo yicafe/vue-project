@@ -1,13 +1,17 @@
 <template>
   <div v-if="currentUser">
-    <h2>发布文章</h2>
-    <p>当前登录用户: <strong>{{ currentUser.username }}</strong></p>
-    <input v-model="title" placeholder="标题" />
-    <textarea v-model="content" placeholder="内容"></textarea>
-    <input v-model="currentUser.username" placeholder="#" disabled />
-    <button @click="publishPost">发布</button>
+    <!-- 当前登录用户 
+    <p>你好: <strong>{{ currentUser.username }}</strong></p>
+    -->
+    <p>你好：</p><input v-model="currentUser.username" placeholder="#" disabled /><br>
+    <input v-model="title" placeholder="标题" /><br><hr>
+    <textarea v-model="content" placeholder="内容"></textarea><br>
+
+    <button class="inline-block px-6 py-0 font-medium text-center text-black border border-transparent rounded-md bg-violet-300 hover:bg-violet-400" @click="publishPost">发布</button>
+    <br>
   </div>
   <p v-else>请先登录</p>
+  <hr>
 </template>
 
 <script>

@@ -1,19 +1,23 @@
 <template>
   <div>
-    <h2>登录 / 注册</h2>
+    <h2></h2><br>
     <form @submit.prevent="handleAuth">
-      <input v-model="identifier" placeholder="用户名 / 邮箱" required />
-      <input v-model="password" type="password" placeholder="密码" required />
-      <button type="submit">{{ isLogin ? "登录" : "注册" }}</button>
+      <input v-model="identifier" placeholder="用户名/邮箱" required />
+      <br>
+      <hr>
+      <input v-model="password" type="password" placeholder="密码" required /><br>
+      <button class="inline-block px-6 py-0 font-medium text-center text-black bg-red-400 border border-transparent rounded-md hover:bg-red-500" type="submit">{{ isLogin ? "登录" : "注册" }}</button>
     </form>
-    <button @click="toggleAuth">{{ isLogin ? "去注册" : "去登录" }}</button>
+    <button class="inline-block px-4 py-0 font-medium text-center text-black bg-gray-300 border border-transparent rounded-md hover:bg-gray-200" @click="toggleAuth">{{ isLogin ? "没账号" : "有账号" }}</button>
+    <br>
+    <hr>
 
     <!-- 在线用户总数 -->
-    <h3>当前在线用户：{{ users.length }}</h3>
+    <h3>在线用户：{{ users.length }}</h3>
     <ul>
       <li v-for="(user, index) in users" :key="index">
         {{ user.username }} 
-        <button @click="handleLogout(user.username)">退出登录</button>
+        <button class="inline-block px-1 py-0 font-medium text-center text-black border border-transparent rounded-md bg-violet-300 hover:bg-violet-400" @click="handleLogout(user.username)">退出登录</button>
       </li>
     </ul>
   </div>
