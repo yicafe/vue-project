@@ -39,7 +39,7 @@
       <!-- 默认图片 -->
       <div v-else class="post-image">
         <img
-          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+          src="https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_4_snow_shower_5f90d5c8de.jpg?updatedAt=2025-02-07T04%3A27%3A23.836Z"
           alt="Default Post Image"
         />
       </div>
