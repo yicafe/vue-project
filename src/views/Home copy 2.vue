@@ -21,7 +21,7 @@
                 <div class="flex items-center space-x-6 lg:space-x-8">
                   <div class="transform scale-100 -rotate-6">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" 
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg" 
                       alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
@@ -31,25 +31,25 @@
                   </div>
                   <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/N0Zdz97B/29-giovanni-previdi-2.jpg"
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg"
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg"
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/6p5b2NpJ/10-jannerugland.jpg"
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/rskQqBPH/15ellemaywatson.jpg"
+                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                   </div>
