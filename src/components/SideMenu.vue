@@ -1,7 +1,7 @@
 <template>
   <div class="flex min-h-screen">
     <!-- 菜单栏 -->
-    <div class="fixed h-full text-white transition-all duration-300 ease-in-out bg-gray-800 w-52" :class="{ '-ml-64': !isMenuOpen }">
+    <div class="fixed h-full text-white transition-all duration-300 ease-in-out bg-gray-800 w-50" :class="{ '-ml-64': !isMenuOpen }">
       <div class="p-4 pt-16">
         <h2 class="text-lg font-semibold">菜单栏</h2>
         <ul class="mt-4 space-y-2">

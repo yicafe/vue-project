@@ -1,6 +1,6 @@
 <template>
   <!-- 帖子容器 -->
-  <div class="max-w-lg p-4 mx-auto bg-white rounded-lg shadow-lg">
+  <div class="max-w-lg p-4 pt-16 mx-auto bg-white rounded-lg shadow-lg">
     <!-- 遍历帖子 -->
     <div v-for="post in posts" :key="post.id" class="post">
       <!-- 帖子头部 -->
