@@ -1,7 +1,7 @@
 <template>
   <div class="relative overflow-hidden ">
     <!-- 头部 -->
-    <header class="text-center">
+    <header class="pt-16 text-center">
       <h1 class="text-4xl font-bold text-gray-900">
         {{ language === 'en' ? 'About Me' : '关于我' }}
       </h1>

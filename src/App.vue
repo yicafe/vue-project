@@ -1,7 +1,7 @@
 <template>
   <div class="#">
     <!-- 头部 -->
-    <header class="#">
+    <header class="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <Disclosure as="nav" class="bg-pink-300" v-slot="{ open }">
         <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="relative flex items-center justify-between h-16">
@@ -108,7 +108,7 @@
     </main>
 
     <!-- 底部 -->
-    <footer class="#">
+    <footer class="fixed bottom-0 left-0 w-full">
       <div class="container mx-auto text-center text-gray-500">
         <p>
           {{ language === 'en' ? '© 2023 My Personal Website. All rights reserved.' : '© 2023 我的个人网站。保留所有权利。' }}
