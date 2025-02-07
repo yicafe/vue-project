@@ -59,7 +59,7 @@
 
             <a href="#"
               class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">
-              {{ language === 'en' ? 'Shop Collection' : '浏览商品' }}
+              {{ language === 'en' ? '🍒🦭' : '🦭🍒' }}
             </a>
           </div>
         </div>

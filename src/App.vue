@@ -31,12 +31,14 @@
               <!-- 语言切换组件 -->
               <LanguageSwitcher />
 
+              <!--View notifications菜单栏消息通知提醒待开发
               <button type="button"
                 class="relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5" />
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="size-6" aria-hidden="true" />
               </button>
+              -->
 
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-3">
@@ -46,7 +48,7 @@
                     <span class="absolute -inset-1.5" />
                     <span class="sr-only">Open user menu</span>
                     <img class="rounded-full size-8"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb.png?updatedAt=2025-02-06T08%3A19%3A46.814Z"
                       alt="" />
                   </MenuButton>
                 </div>
@@ -70,6 +72,7 @@
                         {{ language === 'en' ? 'Settings' : '设置' }}
                       </a>
                     </MenuItem>
+                    <!--功能待开发
                     <MenuItem v-slot="{ active }">
                       <a href="#"
                         :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">
@@ -84,6 +87,7 @@
                         </router-link>
                       </a>
                     </MenuItem>
+                    -->
                   </MenuItems>
                 </transition>
               </Menu>
@@ -108,7 +112,7 @@
     </main>
 
     <!-- 底部 -->
-    <footer class="fixed bottom-0 left-0 w-full">
+    <footer class="bottom-0 left-0 w-full">
       <div class="container mx-auto text-center text-gray-500">
         <p>
           {{ language === 'en' ? '© 2023 My Personal Website. All rights reserved.' : '© 2023 我的个人网站。保留所有权利。' }}
@@ -128,7 +132,7 @@ import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
 // 导航栏数据
 const navigation = [
   { name: 'Home', href: '#', current: false },
-  { name: 'demo', href: ' https://cliooz.cn/#/demo', current: false },
+  /*{ name: 'demo', href: ' https://cliooz.cn/#/demo', current: false },*/
   { name: 'PostList', href: ' https://cliooz.cn/#/PostList', current: false },
   { name: 'About', href: ' https://cliooz.cn/#/About', current: false },
 ];

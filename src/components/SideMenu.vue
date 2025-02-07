@@ -54,7 +54,7 @@ import Login from '@/views/Login.vue';
 import { ref } from 'vue';
 
 // 菜单栏状态，初始值为 true（默认显示）false 为隐藏
-const isMenuOpen = ref(true);
+const isMenuOpen = ref(false);
 
 // 切换菜单栏显示/隐藏
 const toggleMenu = () => {
