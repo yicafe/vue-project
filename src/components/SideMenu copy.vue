@@ -1,7 +1,7 @@
 <template>
   <div class="flex min-h-screen">
-    <!-- 菜单栏 ，绑定ref=用于定位 -->
-    <div ref="menu" class="w-64 h-full text-black transition-all duration-200 ease-in-out bg-gray-300" :class="{ '-ml-64': !isMenuOpen }">
+    <!-- 菜单栏 -->
+    <div class="w-64 h-full text-black transition-all duration-200 ease-in-out bg-gray-300" :class="{ '-ml-64': !isMenuOpen }">
       <div class="p-4 pt-16">
         <h2 class="text-lg font-semibold">🍒🦭</h2>
         <div>
@@ -53,34 +53,12 @@
 import Login from '@/views/Login.vue';
 import { ref } from 'vue';
 
-/*// 菜单栏状态，初始值为 true（默认显示）false 为隐藏
+// 菜单栏状态，初始值为 true（默认显示）false 为隐藏
 const isMenuOpen = ref(false);
 
 // 切换菜单栏显示/隐藏
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
-};
-*/
-
-// 菜单栏状态，初始值为 true（默认显示）
-const isMenuOpen = ref(false);
-
-// 获取菜单栏的 DOM 元素
-const menu = ref(null);
-
-// 切换菜单栏显示/隐藏的方法
-const toggleMenu = () => {
-  if (isMenuOpen.value) {
-    // 如果菜单栏当前是打开的，关闭菜单栏
-    isMenuOpen.value = false;
-  } else {
-    // 如果菜单栏当前是关闭的，打开菜单栏并滚动到顶部
-    isMenuOpen.value = true;
-    // 等待菜单栏动画完成后再滚动
-    setTimeout(() => {
-      menu.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0); // 300ms 是菜单栏动画的持续时间
-  }
 };
 
 
