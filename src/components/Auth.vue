@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- 标题 -->
+    <h2></h2><br>
+
     <!-- 表单，用于登录或注册 -->
     <form @submit.prevent="handleAuth">
       <!-- 用户名输入框 -->
