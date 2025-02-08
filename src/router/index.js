@@ -66,7 +66,7 @@ const router = createRouter({
     history: createWebHashHistory(), // 指定 history 模式，这里采用的是 hash 模式
     routes // 定义路由数组，相当于 routes: routes 的简写模式
 })
-/*
+
 // 路由守卫
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !localStorage.getItem('jwt')) {
@@ -75,20 +75,6 @@ router.beforeEach((to, from, next) => {
       next()
     }
   })
-*/
-
-// 路由守卫
-router.beforeEach((to, from, next) => {
-    const isAuthenticated = localStorage.getItem('jwt'); // 检查用户是否登录
-  
-    if (to.meta.requiresAuth && !isAuthenticated) {
-      // 如果路由需要登录且用户未登录，则重定向到登录页
-      next({ name: 'About' });
-    } else {
-      // 否则，允许导航继续
-      next();
-    }
-  });
 
 // ES6 模块导出语句，它用于将 router 对象导出，以便其他文件可以导入和使用这个对象
 export default router
