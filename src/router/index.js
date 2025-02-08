@@ -70,7 +70,7 @@ const router = createRouter({
 // 路由守卫
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !localStorage.getItem('jwt')) {
-      next('/')
+      next('/PostList')
     } else {
       next()
     }
