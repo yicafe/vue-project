@@ -23,7 +23,7 @@
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
                       <!--3d modelcode-->
                       <ModelViewer
-                        model-url="../models3dgltf/model.glb"
+                        model-url="../models3dgltf/model1.glb"
                         :auto-rotate="true"
                         :scale="0.8"
                         background-color="#"
