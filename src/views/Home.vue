@@ -20,12 +20,19 @@
                 class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
                 <div class="flex items-center space-x-6 lg:space-x-8">
                   <div class="transform scale-100 -rotate-6">
-                    <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" 
+                    <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
+                      <!--3d modelcode-->
+                      <ModelViewer
+                        model-url="../models3dgltf/model1.glb"
+                        :auto-rotate="true"
+                        :scale="0.8"
+                        background-color="#"
+                        @loaded="handleModelLoaded"
+                        @error="handleModelError"
                       alt="" class="object-cover size-full" />
                     </div>
-                    <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                   </div>
@@ -35,8 +42,8 @@
                         alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" 
+                      alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
                       <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg"
@@ -71,6 +78,18 @@
 <script setup>
 import { inject } from 'vue';
 
+//3dmodel 显示代码（
+import ModelViewer from '../components/ModelViewer.vue'
+
+const handleModelLoaded = (model) => {
+  console.log('Model loaded:', model)
+}
+
+const handleModelError = (error) => {
+  console.error('Model load error:', error)
+}
+//3dmodel 显示代码）
+
 // 注入全局语言状态
 const language = inject('language');
 
@@ -82,4 +101,12 @@ const toggleLanguage = () => {
 
 <style scoped>
 /* 添加一些额外样式（如果需要） */
+
+/*3dmodel style*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 </style>

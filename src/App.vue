@@ -132,7 +132,7 @@ import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
 // 导航栏数据
 const navigation = [
   { name: 'Home', href: '#', current: false },
-  /*{ name: 'demo', href: ' https://cliooz.cn/#/demo', current: false },*/
+  { name: 'Design', href: ' https://cliooz.cn/#/Design', current: false },
   { name: 'PostList', href: ' https://cliooz.cn/#/PostList', current: false },
   { name: 'About', href: ' https://cliooz.cn/#/About', current: false },
 ];

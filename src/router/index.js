@@ -5,11 +5,12 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import register from '../views/register.vue'
 import Profile from '../views/Profile.vue'
-import demo from '../views/demo.vue'
+import Design from '../views/Design.vue'
 import About from '../views/About.vue'
 import PostList from '../views/PostList.vue'
 import DropdownsSimple from '../views/DropdownsSimple.vue'
 import SideMenu from '../components/SideMenu.vue'
+import ModelViewer from '../components/ModelViewer.vue'
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -33,9 +34,9 @@ const routes = [
         component: Profile // 对应的组件
     },
     {
-        path: '/demo', // 注册页
-        name: 'demo',
-        component: demo // 对应的组件
+        path: '/Design', // 注册页
+        name: 'Design',
+        component: Design // 对应的组件
     },
     {
         path: '/About', // 注册页
@@ -46,7 +47,6 @@ const routes = [
         path: '/PostList', // 注册页
         name: 'PostList',
         component: PostList, // 对应的组件
-        meta: { requiresAuth: true }  // 需要登录才能访问
     },
     {
         path: '/DropdownsSimple', // 注册页
@@ -57,6 +57,11 @@ const routes = [
         path: '/SideMenu', // 注册页
         name: 'SideMenu',
         component: SideMenu // 对应的组件
+    },
+    {
+        path: '/ModelViewer', // 注册页
+        name: 'ModelViewer',
+        component: ModelViewer // 对应的组件
     },
     // ...
 ]

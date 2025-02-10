@@ -11,7 +11,6 @@
     <br>
   </div>
   <p v-else>请先登录</p>
-  <hr>
 </template>
 
 <script>

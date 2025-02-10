@@ -21,35 +21,42 @@
                 <div class="flex items-center space-x-6 lg:space-x-8">
                   <div class="transform scale-100 -rotate-6">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg" 
+                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" 
                       alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                      <!--3d modelcode-->
+                      <ModelViewer
+                        model-url="../models3dgltf/model1.glb"
+                        :auto-rotate="true"
+                        :scale="0.8"
+                        background-color="#"
+                        @loaded="handleModelLoaded"
+                        @error="handleModelError"
+                      alt="" class="object-cover size-full" />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="https://i.postimg.cc/N0Zdz97B/29-giovanni-previdi-2.jpg"
+                        alt="" class="object-cover size-full" />
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg"
+                        alt="" class="object-cover size-full" />
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                      <img src="https://i.postimg.cc/6p5b2NpJ/10-jannerugland.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                        alt="" class="object-cover size-full" />
-                    </div>
-                    <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                        alt="" class="object-cover size-full" />
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
-                    <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                        alt="" class="object-cover size-full" />
-                    </div>
-                    <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                      <img src="https://i.postimg.cc/rskQqBPH/15ellemaywatson.jpg"
                         alt="" class="object-cover size-full" />
                     </div>
                   </div>
@@ -59,7 +66,7 @@
 
             <a href="#"
               class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">
-              {{ language === 'en' ? 'Shop Collection' : '浏览商品' }}
+              {{ language === 'en' ? '🍒🦭' : '🦭🍒' }}
             </a>
           </div>
         </div>
@@ -70,6 +77,18 @@
 
 <script setup>
 import { inject } from 'vue';
+
+//3dmodel 显示代码（
+import ModelViewer from '../components/ModelViewer.vue'
+
+const handleModelLoaded = (model) => {
+  console.log('Model loaded:', model)
+}
+
+const handleModelError = (error) => {
+  console.error('Model load error:', error)
+}
+//3dmodel 显示代码）
 
 // 注入全局语言状态
 const language = inject('language');
@@ -82,4 +101,12 @@ const toggleLanguage = () => {
 
 <style scoped>
 /* 添加一些额外样式（如果需要） */
+
+/*3dmodel style*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 </style>

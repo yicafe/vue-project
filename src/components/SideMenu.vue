@@ -7,14 +7,14 @@
         <div>
           <Login></Login>
         </div>
+        <!--
         <ul class="mt-4 space-y-2">
-          <li><a href="https://cliooz.cn/#/PostList" class="block p-2 rounded bg-violet-300 hover:bg-violet-400">最新帖子</a></li>
-          <!--
+          <li><a href="#" class="block p-2 rounded hover:bg-gray-400"">首页</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">发现</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">消息</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">个人中心</a></li>
-          -->
         </ul>
+        -->
       </div>
     </div>
 
@@ -24,8 +24,13 @@
       <button @click="toggleMenu"
         class="fixed z-50 p-2 text-white transition-colors bg-gray-500 rounded-lg bottom-4 left-4 hover:bg-gray-400">
         <!-- 使用 Unicode 字符作为图标 -->
-        <span v-if="isMenuOpen" class="text-1xl">🤗</span> <!-- 显示汉堡菜单图标 -->
+        <span v-if="isMenuOpen" class="text-1xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+</svg>
+
+</span> <!-- 显示汉堡菜单图标 -->
         <span v-else class="text-1xl">✍</span> <!-- 显示关闭图标 -->
+        <!--<span v-else class="text-1xl">✍</span>  显示关闭图标 -->
 
         <!-- 或者使用 SVG 图标 -->
         <!--
