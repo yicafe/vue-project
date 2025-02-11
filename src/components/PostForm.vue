@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentUser">
+  <div v-if="currentUser" class="p-6 bg-white rounded-lg shadow-md" >
     <!-- 当前登录用户 
     <p>你好: <strong>{{ currentUser.username }}</strong></p>
     -->
@@ -10,7 +10,12 @@
     <button class="inline-block px-6 py-0 font-medium text-center text-black border border-transparent rounded-md bg-violet-300 hover:bg-violet-400" @click="publishPost">发布</button>
     <br>
   </div>
-  <p v-else>请先登录</p>
+  <div v-else class="p-6 bg-white rounded-lg shadow-md" >
+    <ul>
+      <li><a href="https://cliooz.cn/#/shequgongyue" class="block p-0 rounded bg-violet-300 hover:bg-gray-400">社区公约</a></li>
+          <p>请遵守法律，社区公约，本平台不可填写任何个人隐私信息</p>
+    </ul>
+  </div><!--<p v-else>请先登录</p>-->
 </template>
 
 <script>

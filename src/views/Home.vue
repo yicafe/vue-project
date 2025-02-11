@@ -5,10 +5,12 @@
         <div class="sm:max-w-lg">
           <img alt="Vue logo" class="logo" src="https://cliooz.com/logo.png" width="125" height="125" />
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            {{ language === 'en' ? 'Hi, Finally meet you.' : '嗨，终于见到你了。' }}
+            {{ language === 'zh'
+ ? 'Hi, Finally meet you.' : '嗨，终于见到你了。' }}
           </h1>
           <p class="mt-4 text-xl text-gray-600">
-            {{ language === 'en' ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' : '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
+            {{ language === 'zh'
+ ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' : '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
           </p>
         </div>
         <div>
@@ -66,7 +68,8 @@
 
             <a href="#"
               class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">
-              {{ language === 'en' ? '🍒🦭' : '🦭🍒' }}
+              {{ language === 'zh'
+ ? '🍒🦭' : '🦭🍒' }}
             </a>
           </div>
         </div>

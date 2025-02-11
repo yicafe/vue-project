@@ -11,6 +11,7 @@ import PostList from '../views/PostList.vue'
 import DropdownsSimple from '../views/DropdownsSimple.vue'
 import SideMenu from '../components/SideMenu.vue'
 import ModelViewer from '../components/ModelViewer.vue'
+import shequgongyue from '../views/shequgongyue.vue'//社区公约
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -62,6 +63,11 @@ const routes = [
         path: '/ModelViewer', // 注册页
         name: 'ModelViewer',
         component: ModelViewer // 对应的组件
+    },
+    {
+        path: '/shequgongyue', // 注册页
+        name: 'shequgongyue',
+        component: shequgongyue // 对应的组件
     },
     // ...
 ]

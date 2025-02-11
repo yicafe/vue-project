@@ -98,7 +98,7 @@
         <DisclosurePanel class="sm:hidden">
           <div class="px-2 pt-2 pb-3 space-y-1">
             <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href"
-              :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']"
+              :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']"
               :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
           </div>
         </DisclosurePanel>
@@ -131,10 +131,10 @@ import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
 
 // 导航栏数据
 const navigation = [
-  { name: '首页', href: '#', current: false },
+  { name: 'Home', href: '#', current: false },
   { name: 'Design', href: ' https://cliooz.cn/#/Design', current: false },
-  { name: '帖子列表', href: ' https://cliooz.cn/#/PostList', current: false },
-  { name: '关于', href: ' https://cliooz.cn/#/About', current: false },
+  { name: 'PostList', href: ' https://cliooz.cn/#/PostList', current: false },
+  { name: 'About', href: ' https://cliooz.cn/#/About', current: false },
 ];
 
 // 在父组件中提供语言状态

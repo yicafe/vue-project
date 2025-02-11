@@ -9,7 +9,7 @@
         </div>
         <!--
         <ul class="mt-4 space-y-2">
-          <li><a href="#" class="block p-2 rounded hover:bg-gray-400"">首页</a></li>
+          <li><a href="#" class="block p-2 rounded hover:bg-gray-400">首页</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">发现</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">消息</a></li>
           <li><a href="#" class="block p-2 rounded hover:bg-gray-400">个人中心</a></li>

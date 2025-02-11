@@ -1,7 +1,7 @@
 <template>
   <button @click="toggleLanguage" type="button"
     class="relative p-0 text-gray-900 bg-pink-300 rounded-full hover:bg-pink-200 ">
-    {{ language === 'en' ? '中文' : 'EN' }}
+    {{ language === 'zh' ? '中文' : 'EN' }}
   </button>
 </template>
 

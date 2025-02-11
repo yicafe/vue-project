@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="p-6 bg-gray-400 rounded-lg shadow-md">
     <!-- 标题 -->
     <h2></h2><br>
 
     <!-- 表单，用于登录或注册 -->
     <form @submit.prevent="handleAuth">
       <!-- 用户名输入框 -->
-      <input v-model="identifier" placeholder="用户名" required />
+      <input v-model="identifier" placeholder="用户名/昵称" required />
       <br>
 
       <!-- 如果是注册模式，显示邮箱输入框 -->
@@ -25,12 +25,12 @@
     <!-- 切换登录/注册模式的按钮 -->
     <button
       class="inline-block px-4 py-0 font-medium text-center text-black bg-gray-300 border border-transparent rounded-md hover:bg-gray-200"
-      @click="toggleAuth">{{ isLogin ? "没账号" : "有账号" }}</button>
+      @click="toggleAuth">{{ isLogin ? "没账号？注册" : "有账号？登录" }}</button>
     <br>
     <hr>
 
     <!-- 显示在线用户总数 -->
-    <h3>在线用户：{{ users.length }}</h3>
+    <h3 >在线用户：{{ users.length }}</h3>
 
     <!-- 在线用户列表 -->
     <ul>
