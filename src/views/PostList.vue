@@ -12,9 +12,11 @@
           <h3>{{ post.username }}</h3>
           <p class="timestamp">{{ new Date(post.createdAt).toLocaleString() }}</p>
         </div>
+        <!-- 关注功能待完善 
         <div class="px-3 py-1 ml-auto">
           <DropdownsSimple />
         </div>
+        -->
       </div>
 
       <!-- 帖子内容 -->
@@ -44,7 +46,7 @@
         />
       </div>
 
-      <!-- 帖子底部 -->
+      <!-- 帖子底部功能待完善 
       <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
         <div class="flex items-center space-x-2">
           <button class="flex items-center space-x-1">
@@ -61,6 +63,7 @@
           </button>
         </div>
       </div>
+      -->
     </div>
   </div>
 </template>

@@ -53,7 +53,7 @@ import { register, login } from '../services/api';
 const identifier = ref(''); // 用户名
 const email = ref(''); // 邮箱（仅在注册时使用）
 const password = ref(''); // 密码
-const isLogin = ref(true); // 当前是否为登录模式
+const isLogin = ref(false); // 当前是否为登录模式
 const users = ref(JSON.parse(localStorage.getItem('users')) || []); // 在线用户列表
 
 // 处理登录/注册的函数
