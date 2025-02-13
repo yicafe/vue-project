@@ -2,13 +2,13 @@
   <div class="#">
     <!-- 头部 -->
     <header class="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
-      <Disclosure as="nav" class="bg-white" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-pink-300" v-slot="{ open }">
         <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <!-- Mobile menu button-->
               <DisclosureButton
-                class="relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                class="relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span class="absolute -inset-0.5" />
                 <span class="sr-only">Open main menu</span>
                 <Bars3Icon v-if="!open" class="block size-6" aria-hidden="true" />
@@ -22,7 +22,7 @@
               <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <a v-for="item in navigation" :key="item.name" :href="item.href"
-                    :class="[item.current ? 'bg-white text-gray-700' : 'text-gray-900 hover:bg-pink-400 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']"
+                    :class="[item.current ? 'bg-pink-400 text-gray-700' : 'text-gray-900 hover:bg-pink-400 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']"
                     :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
                 </div>
               </div>
