@@ -3,7 +3,7 @@
     <div class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Products</h2>
 
-      <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         <a v-for="product in products" :key="product.id" :href="product.href" class="group">
           <!-- 替换图片为3D模型查看器 -->
           <div class="relative bg-gray-200 rounded-lg aspect-square group-hover:opacity-75 xl:aspect-7/8">
