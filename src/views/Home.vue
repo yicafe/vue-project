@@ -6,11 +6,12 @@
           <img alt="Vue logo" class="logo" src="https://cliooz.com/logo.png" width="125" height="125" />
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             {{ language === 'zh'
- ? 'Hi, Finally meet you.' : '嗨，终于见到你了。' }}
+              ? 'Hi, Finally meet you.' : '嗨，终于见到你了。' }}
           </h1>
           <p class="mt-4 text-xl text-gray-600">
             {{ language === 'zh'
- ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' : '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
+              ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' :
+            '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
           </p>
         </div>
         <div>
@@ -24,52 +25,46 @@
                   <div class="transform scale-100 -rotate-6">
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
                       <!--3d modelcode-->
-                      <ModelViewer
-                        model-url="../models3dgltf/model1.glb"
-                        :auto-rotate="true"
-                        :scale="0.8"
-                        background-color="#"
-                        @loaded="handleModelLoaded"
-                        @error="handleModelError"
-                      alt="" class="object-cover size-full" />
+                      <ModelViewer model-url="../models3dgltf/model1.glb" :auto-rotate="true" :scale="0.8"
+                        background-color="#" @loaded="handleModelLoaded" @error="handleModelError" alt=""
+                        class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/N0Zdz97B/29-giovanni-previdi-2.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/N0Zdz97B/29-giovanni-previdi-2.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" 
-                      alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/YCpZ6W8P/3-akizuki-namida.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 shrink-0 gap-y-6 lg:gap-y-8">
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/6p5b2NpJ/10-jannerugland.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/6p5b2NpJ/10-jannerugland.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/rskQqBPH/15ellemaywatson.jpg"
-                        alt="" class="object-cover size-full" />
+                      <img src="https://i.postimg.cc/rskQqBPH/15ellemaywatson.jpg" alt=""
+                        class="object-cover size-full" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a href="#"
+            <a href="https://cliooz.cn/#/Design"
               class="inline-block px-8 py-3 font-medium text-center text-white border border-transparent rounded-md bg-violet-400 hover:bg-violet-500">
-              {{ language === 'zh'
- ? '🍒🦭' : '🦭🍒' }}
+              {{ language === 'zh' ? '🍒🦭' : '🦭🍒' }}
             </a>
           </div>
         </div>
@@ -98,7 +93,7 @@ const language = inject('language');
 
 // 切换语言的方法
 const toggleLanguage = () => {
-  language.value = language.value === 'en' ? 'zh' : 'en';
+  language.value = language.value === 'zh' ? 'zh' : 'en';
 };
 </script>
 
@@ -111,5 +106,4 @@ const toggleLanguage = () => {
   margin: 0 auto;
   padding: 20px;
 }
-
 </style>

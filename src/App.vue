@@ -115,7 +115,7 @@
     <footer class="bottom-0 left-0 w-full ">
       <div class="container mx-auto text-center text-gray-500">
         <p>
-          {{ language === 'en' ? '© 2023 My Personal Website. All rights reserved.' : '© 2023 我的个人网站。保留所有权利。' }}
+          {{ language === 'zh' ? '© 2023 My Personal Website, All rights reserved.' : '© 2023 我的个人网站，保留所有权利。' }}
         </p>
       </div>
     </footer>

@@ -44,17 +44,17 @@
           <!-- 媒体容器 -->
           <div class="relative aspect-[3/2] overflow-hidden rounded-b-xl">
             <!-- 原有媒体显示代码 -->
-            <template v-if="post.image">
+            <template v-if="post.media">
               <img
-                v-if="isImage(post.image)"
-                :src="post.image"
+                v-if="isImage(post.media)"
+                :src="post.media"
                 class="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                 loading="lazy"
                 alt="帖子内容"
               />
               <video
                 v-else
-                :src="post.image"
+                :src="post.media"
                 class="object-cover w-full h-full"
                 controls
               ></video>
@@ -144,7 +144,6 @@
 <script setup lang="ts">
 // 原有脚本代码保持不变...
 import { ref, onMounted } from 'vue';
-import { getPosts, Post } from '@/services/PostService';
 
 interface Comment {
   id: string;
@@ -153,7 +152,7 @@ interface Comment {
   avatar: string;
   date: string;
 }
-/*
+
 interface Post {
   id: string;
   username: string;
@@ -167,7 +166,6 @@ interface Post {
   location?: string;
   commentsPreview?: Comment[];
 }
-  */
 
 const posts = ref<Post[]>([]);
 const expandedPostId = ref<string | null>(null);
@@ -176,18 +174,10 @@ const expandedPostId = ref<string | null>(null);
 const togglePost = (postId: string) => {
   expandedPostId.value = expandedPostId.value === postId ? null : postId;
 };
-/*
+
 // 图片检测
 const isImage = (file: string) => {
   return /\.(jpe?g|png|gif|webp|bmp)(\?.*)?$/i.test(file);
-};
-*/
-
-// 判断文件是否为图片
-const isImage = (file: string): boolean => {
-  const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
-  const extension = file.split('.').pop()?.toLowerCase();
-  return extension ? imageExtensions.includes(extension) : false;
 };
 
 // 日期格式化
@@ -207,7 +197,7 @@ const formatFullDate = (dateString: string) => {
     minute: '2-digit'
   });
 };
-/*
+
 // 模拟数据初始化
 onMounted(() => {
   posts.value = Array.from({ length: 8 }, (_, i) => ({
@@ -230,14 +220,6 @@ onMounted(() => {
     }))
   }));
 });
-*/
-// 组件加载后获取数据
-onMounted(async () => {
-  const data = await getPosts();
-  console.log('Fetched posts:', data);
-  posts.value = data;
-});
-
 </script>
 
 <style>
