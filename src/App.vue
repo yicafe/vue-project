@@ -30,6 +30,8 @@
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <!-- 语言切换组件 -->
               <LanguageSwitcher />
+              <!-- 搜索组件 -->
+              <SearchModal />
 
               <!--View notifications菜单栏消息通知提醒待开发
               <button type="button"
@@ -128,6 +130,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline';
 import LanguageSwitcher from './components/LanguageSwitcher.vue'; // 引入语言切换组件
 import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
+import SearchModal from './components/SearchModal.vue'; // 引入搜索组件
 
 // 导航栏数据
 const navigation = [
