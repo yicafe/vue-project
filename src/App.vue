@@ -14,6 +14,8 @@
                 <Bars3Icon v-if="!open" class="block size-6" aria-hidden="true" />
                 <XMarkIcon v-else class="block size-6" aria-hidden="true" />
               </DisclosureButton>
+              <!-- 搜索组件 -->
+              <SearchModal />
             </div>
             <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
               <div class="flex items-center shrink-0">
@@ -25,13 +27,13 @@
                     :class="[item.current ? 'bg-white text-gray-700' : 'text-gray-900 hover:bg-pink-400 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']"
                     :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
                 </div>
+                                              <!-- 搜索组件 -->
+              <SearchModal/>
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <!-- 语言切换组件 -->
               <LanguageSwitcher />
-              <!-- 搜索组件 -->
-              <SearchModal />
 
               <!--View notifications菜单栏消息通知提醒待开发
               <button type="button"
@@ -96,7 +98,6 @@
             </div>
           </div>
         </div>
-
         <DisclosurePanel class="sm:hidden">
           <div class="px-2 pt-2 pb-3 space-y-1">
             <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href"

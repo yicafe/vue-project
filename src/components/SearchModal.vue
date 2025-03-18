@@ -1,7 +1,7 @@
 <template>
   <!-- 快捷键提示 -->
-  <div class="shortcut-hint" @click="openSearch">
-    <kbd>🔍Search</kbd>
+  <div class="relative p-0 text-gray-900 bg-gray-300 rounded-full hover:bg-gray-200 " @click="openSearch">   <!--class="shortcut-hint改成 class="relative p-0 text-gray-900 bg-gray-300 rounded-full hover:bg-gray-200 ""-->
+    <kbd>🔍</kbd>
   </div>
 
   <!-- 搜索模态框 -->
@@ -85,10 +85,10 @@ const isLoading = ref(false)
 const searchData = ref([
   { 
     id: 1,
-    category: '组件',
-    title: 'Button 按钮',
-    description: '用于触发操作的标准按钮组件',
-    path: '/components/button'
+    category: '学习',
+    title: 'rhino enscape',
+    description: '学习技巧分享',
+    path: '/about'
   },
   {
     id: 2,
@@ -96,6 +96,13 @@ const searchData = ref([
     title: 'Flex 布局',
     description: '使用flexbox实现灵活布局',
     path: '/utilities/flex'
+  },
+  {
+    id: 3,
+    category: '社区',
+    title: '社区公约',
+    description: '需要注意的问题',
+    path: '/shequgongyue'
   },
   // 更多数据...
 ])
