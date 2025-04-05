@@ -52,7 +52,7 @@
                     <span class="absolute -inset-1.5" />
                     <span class="sr-only">Open user menu</span>
                     <img class="rounded-full size-8"
-                      src="https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb.png?updatedAt=2025-02-06T08%3A19%3A46.814Z"
+                      src="https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png?updatedAt=2025-04-05T17%3A55%3A42.196Z"
                       alt="" />
                   </MenuButton>
                 </div>
