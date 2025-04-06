@@ -1,4 +1,4 @@
-<!-- PostCreator.vue -->
+<!-- PostCreator.vue 上传图片 + 发布文章-->待修改图片上传功能正常其他功能待修改
 <template>
   <div class="max-w-md p-4 mx-auto space-y-4 bg-white rounded shadow">
     <h2 class="text-xl font-bold">发布文章</h2>
@@ -34,7 +34,8 @@ import { ref } from 'vue'
 import axios from 'axios'
 
 // 你的 Strapi 地址
-const API_URL = 'http://localhost:1337'
+//const API_URL = 'http://localhost:1337'
+const API_URL = 'https://my-strapi-project-h7zt.onrender.com/'
 
 // 可选：添加认证 token（如果需要登录）
 const token = '' // 如果登录了，可以设置为 Bearer token
@@ -70,8 +71,8 @@ const submitPost = async () => {
 
     const postData = {
       data: {
-        title: post.title.value,
-        content: post.content.value,
+        title: title.value,
+        content: content.value,
         image: image?.id || null,
         publishedAt: new Date().toISOString(), // 自动发布
       }
