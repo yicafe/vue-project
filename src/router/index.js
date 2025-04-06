@@ -12,6 +12,7 @@ import DropdownsSimple from '../views/DropdownsSimple.vue'
 import SideMenu from '../components/SideMenu.vue'
 import ModelViewer from '../components/ModelViewer.vue'
 import shequgongyue from '../views/shequgongyue.vue'//社区公约
+import PostCreator from '../views/PostCreator.vue'//图文发发送功能开发中
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -68,6 +69,11 @@ const routes = [
         path: '/shequgongyue', // 注册页
         name: 'shequgongyue',
         component: shequgongyue // 对应的组件
+    },
+    {
+        path: '/PostCreator', // 注册页
+        name: 'PostCreator',
+        component: PostCreator // 对应的组件
     },
     // ...
 ]
