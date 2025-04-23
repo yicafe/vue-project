@@ -34,7 +34,7 @@ export const getPosts = async (): Promise<Post[]> => {
 }; 
 */
 
-import api from '../services/api';
+import api from './api';
 
 // 定义 Post 类型
 export interface Post {

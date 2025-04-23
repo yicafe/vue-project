@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//const API_URL = 'http://localhost:1337/api'; // 修改为你的 Strapi 地址
 const API_URL = 'https://my-strapi-project-h7zt.onrender.com/api';
 
 export const api = axios.create({
@@ -65,7 +66,7 @@ export const uploadImage = async (token, file) => {
 };
 
 // 创建帖子（支持图片）
-export const createPost = async (token, title, content, username, image) => {
+export const createPost = async (token, title, content, username, image: any) => {
   try {
     const postData = {
       title,
@@ -76,10 +77,22 @@ export const createPost = async (token, title, content, username, image) => {
     if (image) {
       postData.image = image; // 关联图片 ID
     }
-
+/**
     const response = await api.post(
       '/posts',
       { data: postData },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+ */
+    const response = await api.post(
+      '/posts', // 确保这个路径与你的 Strapi 内容类型路径匹配
+      {
+        data: { // 数据结构符合 Strapi 5 的格式
+          title,
+          content,
+          username
+        },
+      },
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
