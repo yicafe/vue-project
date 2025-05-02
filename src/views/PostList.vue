@@ -12,16 +12,9 @@
           <!-- 头部区域 -->
           <div class="flex items-center gap-2 p-3">
             <img
-              v-if="isavatar(post.avatar)"
-              :src="post.avatar" 
+              :src="post.avatar || defaultAvatar"
               class="object-cover w-10 h-10 rounded-full"
               alt="用户头像"
-            />
-            <img
-              v-else
-              src="https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343.jpeg"
-              class="object-cover w-full h-full"
-              alt="默认图片"
             />
             <div class="flex-1 min-w-0">
               <h3 class="text-sm font-medium truncate">{{ post.username }}</h3>
@@ -93,7 +86,7 @@
             <!-- 头部 -->
             <div class="flex items-center gap-3">
               <img 
-                :src="selectedPost.avatar" 
+                :src="selectedPost.avatar || defaultAvatar" 
                 class="object-cover w-12 h-12 rounded-full"
                 alt="用户头像"
               />
@@ -163,7 +156,7 @@
                 class="flex items-start py-3 space-x-3"
               >
                 <img 
-                  :src="comment.avatar" 
+                  :src="comment.avatar || defaultAvatar"
                   class="object-cover w-8 h-8 rounded-full"
                   alt="评论用户头像"
                 />
@@ -192,6 +185,7 @@ import { getPosts, Post } from '@/services/PostService';
 
 const posts = ref<Post[]>([]);
 const expandedPostId = ref<string | null>(null);
+const defaultAvatar = 'https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343.jpeg';//添加默认头像常量
 
 const selectedPost = computed(() => {
   return posts.value.find(post => post.id === expandedPostId.value) || {} as Post;
