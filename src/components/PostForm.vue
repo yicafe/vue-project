@@ -36,7 +36,6 @@ import { createPost, uploadImage } from '../services/api';
 
 export default {
   setup() {
-    const avatar = ref('');
     const title = ref('');
     const content = ref('');
     const imageFile = ref(null);
@@ -76,7 +75,6 @@ export default {
 
         await createPost(
           currentUser.value.token,
-          avatar.value,
           title.value,
           content.value,
           currentUser.value.username,
@@ -85,7 +83,6 @@ export default {
 
         alert('文章发布成功');
         // 清空表单
-        avatar.value = '';
         title.value = '';
         content.value = '';
         imageFile.value = null;

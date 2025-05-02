@@ -59,7 +59,7 @@ export const getPosts = async (): Promise<Post[]> => {
     const posts = response.data.data.map((post: any) => ({
       id: post.id, // 帖子 ID
       username: post.username, // 用户名
-      avatar: post.avatar?.url ? baseUrl + post.avatar.url : '/default-avatar.png', // 用户头像 URL，若无头像则使用默认头像
+      avatar: post.avatar?.url ? baseUrl + post.avatar.url : 'https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343_123d519614.jpeg', // 用户头像 URL，若无头像则使用默认头像
       content: post.content, // 帖子内容
       image: post.image?.[0]?.url ? baseUrl + post.image[0].url : '', // 帖子图片 URL，若无图片则为空
       createdAt: post.createdAt, // 发布时间
