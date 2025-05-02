@@ -57,7 +57,7 @@
             </template>
             <img
               v-else
-              src="https://my-strapi-project-h7zt.onrender.com/uploads/10_jannerugland_85da18286b.jpg"
+              src="https://my-strapi-project-h7zt.onrender.com/uploads/IMG_20250429_190419_a2f28ded90.jpg"
               class="object-cover w-full h-full"
               alt="默认图片"
             />
@@ -126,7 +126,7 @@
               </template>
               <img
                 v-else
-                src="https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_4_snow_shower.jpg"
+                src="https://my-strapi-project-h7zt.onrender.com/uploads/IMG_20250429_190419_a2f28ded90.jpg"
                 class="object-cover w-full h-full"
                 alt="默认图片"
               />
