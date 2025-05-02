@@ -11,10 +11,17 @@
         <div class="relative">
           <!-- 头部区域 -->
           <div class="flex items-center gap-2 p-3">
-            <img 
+            <img
+              v-if="isavatar(post.avatar)"
               :src="post.avatar" 
               class="object-cover w-10 h-10 rounded-full"
               alt="用户头像"
+            />
+            <img
+              v-else
+              src="https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343.jpeg"
+              class="object-cover w-full h-full"
+              alt="默认图片"
             />
             <div class="flex-1 min-w-0">
               <h3 class="text-sm font-medium truncate">{{ post.username }}</h3>
