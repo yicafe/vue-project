@@ -185,7 +185,7 @@ import { getPosts, Post } from '@/services/PostService';
 
 const posts = ref<Post[]>([]);
 const expandedPostId = ref<string | null>(null);
-const defaultAvatar = 'https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343.jpeg';//添加默认头像常量
+const defaultAvatar = 'https://my-strapi-project-h7zt.onrender.com/uploads/IMG_20250429_190419_a2f28ded90.jpg';//添加默认头像常量
 
 const selectedPost = computed(() => {
   return posts.value.find(post => post.id === expandedPostId.value) || {} as Post;

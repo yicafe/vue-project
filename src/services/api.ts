@@ -66,9 +66,10 @@ export const uploadImage = async (token, file) => {
 };
 
 // 创建帖子（支持图片）
-export const createPost = async (token, title, content, username, image: any) => {
+export const createPost = async (token, avatar, title, content, username, image: any) => {
   try {
     const postData = {
+      avatar,
       title,
       content,
       username,
@@ -88,6 +89,7 @@ export const createPost = async (token, title, content, username, image: any) =>
       '/posts', // 确保这个路径与你的 Strapi 内容类型路径匹配
       {
         data: { // 数据结构符合 Strapi 5 的格式
+          avatar,
           title,
           content,
           username
