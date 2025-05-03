@@ -180,7 +180,7 @@
               </svg>
             </a>-->
             <!-- 邮件图标 -->
-            <a href="mailto:your@email.com" class="text-gray-600 transition-colors duration-200 hover:text-yellow-500"
+            <a href="mailto:@163.com" class="text-gray-600 transition-colors duration-200 hover:text-yellow-500"
               aria-label="Email">
               <svg class="w-5 h-5" viewBox="0 0 512 512" aria-hidden="true">
                 <path fill="currentColor"
