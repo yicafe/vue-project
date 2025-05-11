@@ -30,7 +30,7 @@
                         class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/4xskWM4B/4-snow-shower.jpg" alt=""
+                      <img src="https://my-strapi-project-h7zt.onrender.com/uploads/0511_9ed43f20a3.png" alt=""
                         class="object-cover size-full" />
                     </div>
                   </div>
@@ -44,7 +44,7 @@
                         class="object-cover size-full" />
                     </div>
                     <div class="h-64 overflow-hidden rounded-lg w-44">
-                      <img src="https://i.postimg.cc/KYp6v8PH/26-pistachiosjewelry.jpg" alt=""
+                      <img src="https://my-strapi-project-h7zt.onrender.com/uploads/DSC_04474_d087cee393.jpg" alt=""
                         class="object-cover size-full" />
                     </div>
                   </div>
