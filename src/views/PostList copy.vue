@@ -41,19 +41,16 @@
     </div>
 
     <!-- 全屏详情弹窗 -->
-    <!-- 增强后的全屏弹窗 -->
     <transition enter-active-class="transition-opacity duration-300"
       leave-active-class="transition-opacity duration-300" enter-from-class="opacity-0" enter-to-class="opacity-100"
       leave-from-class="opacity-100" leave-to-class="opacity-0">
       <div v-if="expandedPostId"
         class="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black bg-opacity-50"
-        @click.self="expandedPostId = null" @touchstart.passive="handleTouchStart" @touchmove.passive="handleTouchMove"
-        @touchend="handleTouchEnd" @mousedown="handleMouseStart" @mousemove="handleMouseMove" @mouseup="handleMouseEnd"
-        @mouseleave="handleMouseEnd">
-        <div class="relative w-full max-w-2xl m-4 transition-transform duration-300 bg-white rounded-lg"
-          :style="swipeStyle">
+        @click.self="expandedPostId = null">
+        <div class="relative w-full max-w-2xl m-4 bg-white rounded-lg">
           <!-- 关闭按钮 -->
           <button @click="expandedPostId = null" class="absolute p-2 text-gray-500 bottom-4 right-4 hover:text-gray-700">
+            <!-- SVG关闭图标 -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -141,116 +138,15 @@ const posts = ref<Post[]>([]);
 const expandedPostId = ref<string | null>(null);
 const defaultAvatar = 'https://my-strapi-project-h7zt.onrender.com/uploads/IMG_3534_296353d343_123d519614.jpeg';//添加默认头像常量
 
-// 滑动相关状态
-const touchStartY = ref(0);
-const touchStartTime = ref(0);
-const currentOffsetY = ref(0);
-const isSwiping = ref(false);
-let mouseStartY = 0;
-let isMouseDown = false;
-
-// 滑动参数配置
-const SWIPE_THRESHOLD = 50;
-const SWIPE_SPEED_THRESHOLD = 0.3;
-const MAX_SWIPE_OFFSET = 100;
-
 // 计算当前选中的帖子
 const selectedPost = computed(() => {
   return posts.value.find(post => post.id === expandedPostId.value) || {} as Post;
 });
 
-// 滑动样式计算
-const swipeStyle = computed(() => ({
-  transform: `translateY(${currentOffsetY.value}px)`,
-  opacity: 1 - Math.abs(currentOffsetY.value) / 200
-}));
-
-// 当前索引计算
-const currentIndex = computed(() => 
-  posts.value.findIndex(post => post.id === expandedPostId.value)
-);
-
-/* 触摸事件处理 */
-const handleTouchStart = (e: TouchEvent) => {
-  touchStartY.value = e.touches[0].clientY;
-  touchStartTime.value = Date.now();
-  currentOffsetY.value = 0;
-  isSwiping.value = true;
-};
-
-const handleTouchMove = (e: TouchEvent) => {
-  if (!isSwiping.value) return;
-  
-  const deltaY = e.touches[0].clientY - touchStartY.value;
-  currentOffsetY.value = Math.abs(deltaY) > MAX_SWIPE_OFFSET 
-    ? MAX_SWIPE_OFFSET * Math.sign(deltaY) 
-    : deltaY;
-};
-
-const handleTouchEnd = () => {
-  isSwiping.value = false;
-  const deltaTime = Date.now() - touchStartTime.value;
-  const swipeSpeed = Math.abs(currentOffsetY.value) / deltaTime;
-
-  if (Math.abs(currentOffsetY.value) > SWIPE_THRESHOLD || swipeSpeed > SWIPE_SPEED_THRESHOLD) {
-    switchPost(currentOffsetY.value > 0 ? 'prev' : 'next');
-  }
-  currentOffsetY.value = 0;
-};
-
-/* 鼠标事件处理 */
-const handleMouseStart = (e: MouseEvent) => {
-  mouseStartY = e.clientY;
-  isMouseDown = true;
-  touchStartTime.value = Date.now();
-};
-
-const handleMouseMove = (e: MouseEvent) => {
-  if (!isMouseDown) return;
-  
-  const deltaY = e.clientY - mouseStartY;
-  currentOffsetY.value = Math.abs(deltaY) > MAX_SWIPE_OFFSET 
-    ? MAX_SWIPE_OFFSET * Math.sign(deltaY) 
-    : deltaY;
-};
-
-const handleMouseEnd = () => {
-  if (!isMouseDown) return;
-  isMouseDown = false;
-  
-  const deltaTime = Date.now() - touchStartTime.value;
-  const swipeSpeed = Math.abs(currentOffsetY.value) / deltaTime;
-
-  if (Math.abs(currentOffsetY.value) > SWIPE_THRESHOLD || swipeSpeed > SWIPE_SPEED_THRESHOLD) {
-    switchPost(currentOffsetY.value > 0 ? 'prev' : 'next');
-  }
-  currentOffsetY.value = 0;
-};
-
-/* 帖子切换逻辑 */
-const switchPost = (direction: 'prev' | 'next') => {
-  let newIndex = currentIndex.value;
-  direction === 'next' ? newIndex++ : newIndex--;
-
-  // 循环切换逻辑
-  if (newIndex >= posts.value.length) newIndex = 0;
-  if (newIndex < 0) newIndex = posts.value.length - 1;
-
-  expandedPostId.value = posts.value[newIndex]?.id || null;
-};
-
 // 展开帖子方法
 const expandPost = (postId: string) => {
   expandedPostId.value = postId;
 };
-
-// 展开帖子方法(扩展建议)
-const preloadMedia = (index: number) => {
-  const post = posts.value[index];
-  if (post?.image) {
-    new Image().src = post.image;
-  }
-}
 
 // 保持原有的格式化和数据获取方法
 // ...
@@ -347,16 +243,3 @@ onMounted(async () => {
 });
 
 </script>
-<style>
-/* 添加滑动动画 */
-.swipe-transition {
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-             opacity 0.3s ease;
-}
-
-/* 阻止图片拖拽 
-img {
-  user-drag: none;
-  -webkit-user-drag: none;
-}*/
-</style>
