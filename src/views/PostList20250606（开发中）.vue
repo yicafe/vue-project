@@ -86,17 +86,17 @@
                 class="object-cover w-full h-full" alt="默认图片" />
             </div>
 
-            <!-- 元数据 
+            <!-- 元数据 -->
             <div class="space-y-2 text-sm text-gray-500">
               <p v-if="selectedPost.location">📍 {{ selectedPost.location }}</p>
               <p>👁️‍🗨️ {{ selectedPost.views || 0 }} 次浏览</p>
-            </div>-->
+            </div>
 
-            <!-- 互动统计 
+            <!-- 互动统计 -->
             <div class="flex items-center justify-between text-sm text-gray-600">
               <div class="flex space-x-4">
                 <button class="flex items-center hover:text-blue-500">
-                  <span class="mr-1">💖</span>
+                  <span class="mr-1">👍</span>
                   {{ selectedPost.likes || 0 }}
                 </button>
                 <button class="flex items-center hover:text-green-500">
@@ -107,9 +107,9 @@
               <button class="hover:text-red-500">
                 <span>🔖</span>
               </button>
-            </div>-->
+            </div>
 
-            <!-- 评论预览 
+            <!-- 评论预览 -->
             <div class="pt-4 border-t border-gray-100">
               <div v-for="comment in selectedPost.commentsPreview" :key="comment.id"
                 class="flex items-start py-3 space-x-3">
@@ -125,7 +125,7 @@
               <button class="w-full pt-2 text-sm text-blue-500 hover:underline">
                 查看全部{{ selectedPost.comments }}条评论
               </button>
-            </div>-->
+            </div>
           </div>
         </div>
       </div>
