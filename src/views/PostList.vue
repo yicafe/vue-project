@@ -133,12 +133,11 @@
     <!-- 键盘操作提示 -->
     <div v-if="expandedPostId"
       class="fixed flex items-center gap-4 px-4 py-2 text-sm text-white transform -translate-x-1/2 bg-black rounded-lg bottom-4 left-1/2 bg-opacity-70 backdrop-blur-sm">
-      <span>← →切换</span>
+      <span>切换</span>
       <kbd class="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded-md">←</kbd>
       <kbd class="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded-md">→</kbd>
-      <span class="ml-4">按</span>
+      <span class="ml-4">关闭</span>
       <kbd class="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded-md">ESC</kbd>
-      <span>关闭</span>
     </div>
   </div>
 </template>
