@@ -25,7 +25,7 @@
                   <div class="transform scale-100 -rotate-6">
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
                       <!--3d modelcode-->
-                      <ModelViewer model-url="../models3dgltf/model1.glb" :auto-rotate="true" :scale="0.8"
+                      <ModelViewer model-url="../models3dgltf/rhino.glb" :auto-rotate="true" :scale="0.8"
                         background-color="#" @loaded="handleModelLoaded" @error="handleModelError" alt=""
                         class="object-cover size-full" />
                     </div>
