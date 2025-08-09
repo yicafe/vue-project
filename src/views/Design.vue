@@ -34,22 +34,9 @@ const products = [
     name: 'model',
     //href: '#',
     price: '1',
-    modelUrl: '../models3dgltf/model.glb', // 模型文件路径
+    modelUrl: '../models3dgltf/rhino.glb', // 模型文件路径
   },
-  {
-    id: 2,
-    name: 'model2',
-    //href: '#',
-    price: '2',
-    modelUrl: '../models3dgltf/model1.glb',
-  },
-  {
-    id: 3,
-    name: '',
-    //href: '#',
-    price: '3',
-    modelUrl: '../models3dgltf/rhino.glb',
-  },
+  
 
 ]
 </script>
