@@ -72,6 +72,7 @@ export const createPost = async (token, title, content, username, image: any) =>
       title,
       content,
       username,
+      image
     };
 
     if (image) {
@@ -90,7 +91,8 @@ export const createPost = async (token, title, content, username, image: any) =>
         data: { // 数据结构符合 Strapi 5 的格式
           title,
           content,
-          username
+          username,
+          image
         },
       },
       { headers: { Authorization: `Bearer ${token}` } }

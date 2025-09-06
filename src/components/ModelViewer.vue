@@ -10,6 +10,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
 
 const props = defineProps({
   modelUrl: {
@@ -35,11 +36,15 @@ const props = defineProps({
   cameraPosition: {
     type: Object,
     default: () => ({ x: 5, y: 5, z: 5 })
+  },
+  envMapUrl: {
+    type: String,
+    //default: null // HDR 环境贴图路径
+    default: '../models3dgltf/studio.hdr' // HDR 环境贴图路径
   }
 })
 
 const emit = defineEmits(['loaded', 'error'])
-
 const container = ref(null)
 const loading = ref(true)
 const progress = ref(0)
@@ -60,7 +65,7 @@ const initScene = () => {
   camera = new THREE.PerspectiveCamera(
     75,
     container.value.offsetWidth / container.value.offsetHeight,
-    0.1,
+    0.01,
     1000
   )
   camera.position.set(
@@ -76,14 +81,61 @@ const initScene = () => {
   })
   renderer.setSize(container.value.offsetWidth, container.value.offsetHeight)
   renderer.setPixelRatio(window.devicePixelRatio)
+  renderer.shadowMap.enabled = true
+  renderer.toneMapping = THREE.ACESFilmicToneMapping
+  renderer.toneMappingExposure = 1.0
   container.value.appendChild(renderer.domElement)
 
-  // 光源
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.2)
+  // 加载 HDR 环境贴图
+  if (props.envMapUrl) {
+    new RGBELoader().load(props.envMapUrl, (texture) => {
+      texture.mapping = THREE.EquirectangularReflectionMapping
+      scene.environment = texture
+      //scene.background = texture // 可选：将背景设置为 HDR
+      scene.background = new THREE.Color(0xadd8e6) // 象牙白可选：将背景设置为 HDR
+    })
+  }
+
+  // 半球光（模拟天空和地面光照）
+  const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6)
+  hemisphereLight.position.set(0, 10, 0)
+  scene.add(hemisphereLight)
+
+  // 环境光
+  const ambientLight = new THREE.AmbientLight(0x404040, 0.5)
   scene.add(ambientLight)
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8)
-  directionalLight.position.set(5, 5, 5)
+
+  // 主平行光
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0)
+  directionalLight.position.set(5, 10, 7)
+  directionalLight.castShadow = true
+  directionalLight.shadow.mapSize.width = 2048
+  directionalLight.shadow.mapSize.height = 2048
+  directionalLight.shadow.camera.near = 0.5
+  directionalLight.shadow.camera.far = 50
   scene.add(directionalLight)
+
+  // 辅助平行光
+  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5)
+  directionalLight2.position.set(-5, 10, -7)
+  directionalLight2.castShadow = true
+  directionalLight2.shadow.mapSize.width = 2048
+  directionalLight2.shadow.mapSize.height = 2048
+  scene.add(directionalLight2)
+
+  // 聚光灯
+  const spotLight = new THREE.SpotLight(0xffffff, 1.0, 100, Math.PI / 6, 0.5)
+  spotLight.position.set(0, 10, 0)
+  spotLight.castShadow = true
+  spotLight.shadow.mapSize.width = 2048
+  spotLight.shadow.mapSize.height = 2048
+  scene.add(spotLight)
+
+  // 点光源
+  const pointLight = new THREE.PointLight(0xffccaa, 0.8, 100)
+  pointLight.position.set(0, 5, 0)
+  pointLight.castShadow = true
+  scene.add(pointLight)
 
   // 坐标系
   if (props.showAxes) {
@@ -101,12 +153,28 @@ const initScene = () => {
 // 加载模型
 const loadModel = () => {
   const loader = new GLTFLoader()
-
   loader.load(
     props.modelUrl,
     (gltf) => {
       model = gltf.scene
       model.scale.set(props.scale, props.scale, props.scale)
+      model.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true
+          child.receiveShadow = true
+          // 确保材质支持光照和环境贴图
+          if (child.material) {
+            // 设置为金属材质
+            child.material.metalness = 1.0  // 金属度：1.0 为纯金属
+            child.material.roughness = 0.1  // 粗糙度：越低越光滑
+            child.material.envMapIntensity = 1.5  // 增强环境贴图反射
+            if (scene.environment) {
+              child.material.envMap = scene.environment
+              child.material.needsUpdate = true  // 更新材质
+            }
+          }
+        }
+      })
       scene.add(model)
       centerModel()
       loading.value = false
@@ -129,7 +197,7 @@ const centerModel = () => {
   const center = box.getCenter(new THREE.Vector3())
   const size = box.getSize(new THREE.Vector3())
   const maxDim = Math.max(size.x, size.y, size.z)
-  
+
   controls.target.copy(center)
   camera.position.copy(center)
   camera.position.z += maxDim * 2
@@ -159,7 +227,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
-  scene.traverse(child => {
+  scene.traverse((child) => {
     if (child.isMesh) {
       child.geometry.dispose()
       child.material.dispose()

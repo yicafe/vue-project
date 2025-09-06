@@ -1,7 +1,8 @@
 <template>
   <div class="flex min-h-screen">
     <!-- 菜单栏 ，绑定ref=用于定位 -->
-    <div ref="menu" class="w-64 h-full text-black transition-all duration-200 ease-in-out bg-gray-300" :class="{ '-ml-64': !isMenuOpen }">
+    <div ref="menu" class="w-64 h-full text-black transition-all duration-200 ease-in-out bg-gray-300"
+      :class="{ '-ml-64': !isMenuOpen }">
       <div class="p-4 pt-16">
         <h2 class="text-lg font-semibold">🍒🦭</h2>
         <div>
@@ -24,11 +25,13 @@
       <button @click="toggleMenu"
         class="fixed z-50 p-2 text-white transition-colors bg-gray-500 rounded-lg bottom-4 left-4 hover:bg-gray-400">
         <!-- 使用 Unicode 字符作为图标 -->
-        <span v-if="isMenuOpen" class="text-1xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-</svg>
+        <span v-if="isMenuOpen" class="text-1xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+          </svg>
 
-</span> <!-- 显示汉堡菜单图标 -->
+        </span> <!-- 显示汉堡菜单图标 -->
         <span v-else class="text-1xl">✍</span> <!-- 显示关闭图标 -->
         <!--<span v-else class="text-1xl">✍</span>  显示关闭图标 -->
 

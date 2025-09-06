@@ -123,32 +123,24 @@
             {{ language === 'zh' ? '© 2023 My Personal Website, All rights reserved.' : '© 2023 我的个人网站，保留所有权利。' }}
           </p>-->
           <!-- 版权信息 -->
-      <p class="text-sm text-gray-600">
-        <template v-if="language === 'en'">
-          ©
-          <a 
-            href="https://cliooz.cn"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-medium text-pink-300 transition-colors duration-200 hover:text-gray-500"
-          >
-            CLIOOZ
-          </a>
-          2023，保留所有权利。
-        </template>
-        <template v-else>
-          ©
-          <a 
-            href="https://cliooz.cn"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-medium text-pink-300 transition-colors duration-200 hover:text-gray-500"
-          >
-          CLIOOZ
-          </a>
-          2023, All rights reserved.
-        </template>
-      </p>
+          <p class="text-sm text-gray-600">
+            <template v-if="language === 'en'">
+              ©
+              <a href="https://cliooz.cn" target="_blank" rel="noopener noreferrer"
+                class="font-medium text-pink-300 transition-colors duration-200 hover:text-gray-500">
+                CLIOOZ
+              </a>
+              2023，保留所有权利。
+            </template>
+            <template v-else>
+              ©
+              <a href="https://cliooz.cn" target="_blank" rel="noopener noreferrer"
+                class="font-medium text-pink-300 transition-colors duration-200 hover:text-gray-500">
+                CLIOOZ
+              </a>
+              2023, All rights reserved.
+            </template>
+          </p>
           <!-- 社交媒体图标 -->
           <div class="flex items-center space-x-4">
             <!-- GitHub 
@@ -191,7 +183,10 @@
         </div>
       </div>
     </footer>
+          <!-- rqcode -->
+    <WechatQrcode />
   </div>
+
 </template>
 
 <script setup>
@@ -201,6 +196,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline';
 import LanguageSwitcher from './components/LanguageSwitcher.vue'; // 引入语言切换组件
 import SideMenu from './components/SideMenu.vue'; // 引入菜单栏组件
 import SearchModal from './components/SearchModal.vue'; // 引入搜索组件
+import WechatQrcode from './components/WechatQrcode.vue';
 
 // 导航栏数据
 const navigation = [

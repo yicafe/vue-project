@@ -12,6 +12,11 @@ import DropdownsSimple from '../views/DropdownsSimple.vue'
 import SideMenu from '../components/SideMenu.vue'
 import ModelViewer from '../components/ModelViewer.vue'
 import shequgongyue from '../views/shequgongyue.vue'//社区公约
+import ReviewBoard from '../views/ReviewBoard.vue'//留言板
+import MessageItem from '../components/MessageItem.vue'//留言板（可复用组件）
+import ImageDisplay from'../components/ImageDisplay.vue'//图片显示组件（可复用）
+import WechatQrcode from'../components/WechatQrcode.vue'
+import demo from '../views/demo.vue'//demo
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -68,6 +73,31 @@ const routes = [
         path: '/shequgongyue', // 注册页
         name: 'shequgongyue',
         component: shequgongyue // 对应的组件
+    },
+        {
+        path: '/ReviewBoard', // 注册页
+        name: 'ReviewBoard',
+        component: ReviewBoard // 对应的组件
+    },
+       {
+        path: '/MessageItem', // 注册页
+        name: 'MessageItem',
+        component: MessageItem // 对应的组件
+    },
+           {
+        path: '/ImageDisplay', // demo
+        name: 'ImageDisplay',
+        component: ImageDisplay // 对应的组件
+    },
+               {
+        path: '/WechatQrcode', // WechatQrcode
+        name: 'WechatQrcode',
+        component: WechatQrcode // 对应的组件
+    },
+                   {
+        path: '/demo', // demo
+        name: 'demo',
+        component: demo // 对应的组件
     },
     // ...
 ]

@@ -54,7 +54,7 @@
         </h2>
         <div class="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
           <div class="p-6 bg-white rounded-lg shadow-md">
-            <img src="https://i.postimg.cc/FsX2KqSN/14-augustlosangeles.jpg" alt="Rhino Example" class="object-cover w-full h-48 rounded-md">
+            <img src="https://my-strapi-project-h7zt.onrender.com/uploads/0511_9ed43f20a3.png" alt="Rhino Example" class="object-cover w-full h-48 rounded-md">
             <h3 class="mt-4 text-xl font-semibold text-gray-800">
               {{ language === 'zh'
  ? 'Rhino 3D Modeling' : 'Rhino 3D 建模' }}
@@ -69,7 +69,7 @@
             </p>
           </div>
           <div class="p-6 bg-white rounded-lg shadow-md">
-            <img src="https://i.postimg.cc/FsX2KqSN/14-augustlosangeles.jpg" alt="Enscape Example" class="object-cover w-full h-48 rounded-md">
+            <img src="https://my-strapi-project-h7zt.onrender.com/uploads/tunon_arquitectos_luis_asin_casas_de_piedra_1_5ce17352cb.jpg" alt="Enscape Example" class="object-cover w-full h-48 rounded-md">
             <h3 class="mt-4 text-xl font-semibold text-gray-800">
               {{ language === 'zh'
  ? 'Enscape Rendering' : 'Enscape 渲染' }}
