@@ -46,7 +46,7 @@ const products = ref([
     price: '',
     modelUrl: '../models3dgltf/model1.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/ellemaywatson_1_7ebe7c2088.jpg', // 替换为你的预览图片
-    showModel: false,
+    showModel: true,
   },
     {
     id: 3,
