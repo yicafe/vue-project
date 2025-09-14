@@ -55,6 +55,15 @@ const products = ref([
     price: '',
     modelUrl: '../models3dgltf/model2.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
+    showModel: true,
+  },
+      {
+    id: 3,
+    name: 'model3',
+    href: '0',
+    price: '',
+    modelUrl: '../models3dgltf/model3.glb',
+    imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
     showModel: false,
   },
 ])
