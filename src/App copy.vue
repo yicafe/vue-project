@@ -216,19 +216,6 @@ onMounted(() => {
     language.value = event.detail;
   });
 });
-
-/*<!--Start of Tawk.to Script-->*/
-onMounted(() => {
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.async = true;
-  script.src = 'https://embed.tawk.to/68ca4f953e09fe1922ac5c4c/1j5b4doq6';
-  script.charset = 'UTF-8';
-  script.setAttribute('crossorigin', '*');
-  document.body.appendChild(script);
-});
-/*<!--End of Tawk.to Script-->*/
-
 </script>
 
 <style scoped>
