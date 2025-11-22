@@ -12,15 +12,16 @@
         />
       </div>
       <!-- 卡片2 -->
-      <div class="card-wrapper">
+             <div class="card-wrapper">
         <ImageDisplay
-          defaultImage="https://my-strapi-project-h7zt.onrender.com/uploads/another_image_1.jpg"
-          hoverImage="https://my-strapi-project-h7zt.onrender.com/uploads/another_image_2.jpg"
+          defaultImage="https://my-strapi-project-h7zt.onrender.com/uploads/jannerugland_1_32bf48fd6a.jpg"
+          hoverImage="https://my-strapi-project-h7zt.onrender.com/uploads/ellemaywatson_1_7ebe7c2088.jpg"
           labelText="quick view"
           link=""
-          altText="示例图片2"
+          altText="示例图片1"
         />
       </div>
+
     </div>
   </div>
 </template>
