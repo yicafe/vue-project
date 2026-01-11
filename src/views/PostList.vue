@@ -2,28 +2,13 @@
   <!-- 外层容器 -->
   <div class="container p-4 mx-auto">
     <!-- 响应式网格布局 -->
-    <div class="grid grid-cols-1 gap-1 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
       <!-- 帖子卡片循环 -->
       <div v-for="post in posts" :key="post.id"
-        class="transition-all duration-300 bg-white shadow-md cursor-pointer rounded-xl hover:shadow-xl"
+        class="transition-all duration-300 shadow-md cursor-pointer bg-gray rounded-xl hover:shadow-xl hover:bg-gray-50"
         @click.stop="expandPost(post.id)">
         <!-- 卡片基础内容 -->
         <div class="relative">
-          <!-- 头部区域 -->
-          <div class="flex items-center gap-2 p-3">
-            <img :src="post.avatar || defaultAvatar" class="object-cover w-10 h-10 rounded-full" alt="用户头像" />
-            <div class="flex-1 min-w-0">
-              <h3 class="text-sm font-medium truncate">{{ post.username }}</h3>
-              <p class="text-xs text-gray-500 truncate">
-                {{ formatDate(post.createdAt) }}
-              </p>
-            </div>
-          </div>
-
-          <!-- 内容区域 -->
-          <p class="px-3 mb-2 text-sm text-gray-700 line-clamp-2">
-            {{ post.content }}
-          </p>
 
           <!-- 媒体容器 -->
           <div class="relative aspect-[3/2] overflow-hidden rounded-b-xl">
@@ -36,6 +21,21 @@
             <img v-else src="https://my-strapi-project-h7zt.onrender.com/uploads/DSC_01697_d5da3a432e_5d925b2ba1.JPG"
               class="object-cover w-full h-full" alt="默认图片" />
           </div>
+
+          <!-- 头部区域 -->
+          <div class="flex items-center gap-2 p-3">
+            <img :src="post.avatar || defaultAvatar" class="object-cover w-5 h-5 rounded-full" alt="用户头像" />
+              <h3 class="flex-1 text-sm font-medium truncate">{{ post.username }}</h3>
+              <p class="text-xs text-gray-500 truncate">
+                {{ formatDate(post.createdAt) }}
+              </p>
+          </div>
+              
+          <!-- 内容区域 -->
+          <p class="px-3 mb-2 text-sm text-gray-700 line-clamp-2">
+            {{ post.content }}
+          </p>
+          
         </div>
       </div>
     </div>

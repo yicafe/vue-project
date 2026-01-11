@@ -1,5 +1,5 @@
 <template>
-  <div class="#">
+  <div class="min-h-screen bg-[#f1efee]">
     <!-- 头部 -->
     <header class="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <Disclosure as="nav" class="bg-white" v-slot="{ open }">
