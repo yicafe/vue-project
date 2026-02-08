@@ -32,7 +32,7 @@ import ModelViewer from '../components/ModelViewer.vue'
 const products = ref([
   {
     id: 1,
-    name: 'model',
+    name: 'mode0',
     href: '#',
     price: '',
     modelUrl: '../models3dgltf/cliooz.glb',
@@ -55,7 +55,7 @@ const products = ref([
     price: '',
     modelUrl: '../models3dgltf/model2.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
-    showModel: true,
+    showModel: false,
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ const products = ref([
     price: '',
     modelUrl: '../models3dgltf/model4.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
-    showModel: true,
+    showModel: false,
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ const products = ref([
     price: '',
     modelUrl: '../models3dgltf/model5.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
-    showModel: true,
+    showModel: false,
   },
 ])
 </script>
