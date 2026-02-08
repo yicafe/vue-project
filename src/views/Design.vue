@@ -48,7 +48,7 @@ const products = ref([
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/ellemaywatson_1_7ebe7c2088.jpg', // 替换为你的预览图片
     showModel: true,
   },
-    {
+  {
     id: 3,
     name: 'model2',
     href: '0',
@@ -57,7 +57,7 @@ const products = ref([
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
     showModel: true,
   },
-      {
+  {
     id: 4,
     name: 'model3',
     href: '0',
@@ -66,12 +66,21 @@ const products = ref([
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
     showModel: false,
   },
-        {
+  {
     id: 5,
     name: 'model4',
     href: '0',
     price: '',
     modelUrl: '../models3dgltf/model4.glb',
+    imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
+    showModel: true,
+  },
+  {
+    id: 6,
+    name: 'model5',
+    href: '0',
+    price: '',
+    modelUrl: '../models3dgltf/model5.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
     showModel: true,
   },
@@ -81,7 +90,7 @@ const products = ref([
 <style scoped>
 /* 保持宽高比 */
 .aspect-square {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
 }
 
 /* 悬停发光效果 */
