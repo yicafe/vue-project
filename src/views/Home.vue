@@ -11,7 +11,7 @@
           <p class="mt-4 text-xl text-gray-600">
             {{ language === 'zh'
               ? 'Time is like the water in a sponge. You will have it while you squeeze. - Lu Xun' :
-            '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
+              '时间就像海绵里的水，只要你愿意挤，总还有的。--鲁迅' }}
           </p>
         </div>
         <div>
@@ -25,7 +25,7 @@
                   <div class="transform scale-100 -rotate-6">
                     <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
                       <!--3d modelcode-->
-                      <ModelViewer model-url="../models3dgltf/cliooz.glb" :auto-rotate="true" :scale="0.8"
+                      <ModelViewer model-url="../models3dgltf/ARCH1.glb" :auto-rotate="true" :scale="0.8"
                         background-color="#" @loaded="handleModelLoaded" @error="handleModelError" alt=""
                         class="object-cover size-full" />
                     </div>

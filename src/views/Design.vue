@@ -2,7 +2,7 @@
   <div class="relative overflow-hidden">
     <div class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Products</h2>
-      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">  <!-- 恢复用<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
         <div v-for="product in products" :key="product.id" class="relative group" @mouseenter="product.showModel = true"
           @mouseleave="product.showModel = false">
           <a :href="product.href" class="block">
@@ -41,6 +41,15 @@ const products = ref([
   },
   {
     id: 2,
+    name: 'ARCH1',
+    href: '',
+    price: '',
+    modelUrl: '../models3dgltf/ARCH1.glb',
+    imageUrl: '/arch1.png" alt="arch1', // 替换为你的预览图片
+    showModel: true,
+  },
+   {
+    id: 3,
     name: 'model1',
     href: '',
     price: '',
@@ -49,7 +58,7 @@ const products = ref([
     showModel: true,
   },
   {
-    id: 3,
+    id: 4,
     name: 'model2',
     href: '0',
     price: '',
@@ -58,7 +67,7 @@ const products = ref([
     showModel: true,
   },
   {
-    id: 4,
+    id: 5,
     name: 'model3',
     href: '0',
     price: '',
@@ -67,7 +76,7 @@ const products = ref([
     showModel: true,
   },
   {
-    id: 5,
+    id: 6,
     name: 'model4',
     href: '0',
     price: '',
@@ -76,7 +85,7 @@ const products = ref([
     showModel: true,
   },
   {
-    id: 6,
+    id: 7,
     name: 'model5',
     href: '0',
     price: '',
