@@ -45,7 +45,7 @@ const products = ref([
     href: '',
     price: '',
     modelUrl: '../models3dgltf/ARCH1.glb',
-    imageUrl: '/arch1.png" alt="arch1', // 替换为你的预览图片
+    imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/ellemaywatson_1_7ebe7c2088.jpg', // 替换为你的预览图片
     showModel: true,
   },
    {
