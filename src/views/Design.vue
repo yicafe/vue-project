@@ -2,7 +2,7 @@
   <div class="relative overflow-hidden">
     <div class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Products</h2>
-      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">  <!-- 恢复用<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">  <!-- 恢复用<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
         <div v-for="product in products" :key="product.id" class="relative group" @mouseenter="product.showModel = true"
           @mouseleave="product.showModel = false">
           <a :href="product.href" class="block">
@@ -90,6 +90,15 @@ const products = ref([
     href: '0',
     price: '',
     modelUrl: '../models3dgltf/model5.glb',
+    imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
+    showModel: true,
+  },
+    {
+    id: 7,
+    name: 'model6',
+    href: '0',
+    price: '',
+    modelUrl: '../models3dgltf/Marine Plywood.glb',
     imageUrl: 'https://my-strapi-project-h7zt.onrender.com/uploads/thumbnail_6loh2449_14968e26cb_b227b258d7.png', // 替换为你的预览图片
     showModel: true,
   },
