@@ -12,7 +12,7 @@
               <img v-if="!product.showModel" :src="product.imageUrl" alt="Product Image"
                 class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.7)]" />
               <!-- 3D 模型 -->
-              <ModelViewer v-else :model-url="product.modelUrl" :scale="0.5" :auto-rotate="true" :enable-zoom="false"
+              <ModelViewer v-else :model-url="product.modelUrl" :scale="1" :auto-rotate="true" :enable-zoom="false"
                 :camera-position="{ x: 2, y: 2, z: 2 }" class="w-full h-full transition-all duration-300"
                 background-color="#" />
             </div>
