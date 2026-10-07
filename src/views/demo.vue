@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <MagnifierViewer ref="viewerRef" />
     <div class="card-container">
       <!-- 卡片1 -->
       <div class="card-wrapper">
@@ -28,6 +29,7 @@
 
 <script setup>
 import ImageDisplay from '../components/ImageDisplay.vue';
+import MagnifierViewer from '../components/MagnifierViewer.vue';
 </script>
 
 <style>

@@ -2,7 +2,7 @@
   <div class="relative overflow-hidden">
     <div class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Products</h2>
-      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">  <!-- 恢复用<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 xl:gap-x-8">  <!-- 恢复用<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
         <div v-for="product in products" :key="product.id" class="relative group" @mouseenter="product.showModel = true"
           @mouseleave="product.showModel = false">
           <a :href="product.href" class="block">
@@ -12,7 +12,7 @@
               <img v-if="!product.showModel" :src="product.imageUrl" alt="Product Image"
                 class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.7)]" />
               <!-- 3D 模型 -->
-              <ModelViewer v-else :model-url="product.modelUrl" :scale="1" :auto-rotate="true" :enable-zoom="false"
+              <ModelViewer v-else :model-url="product.modelUrl" :scale="0.5" :auto-rotate="true" :enable-zoom="false"
                 :camera-position="{ x: 2, y: 2, z: 2 }" class="w-full h-full transition-all duration-300"
                 background-color="#" />
             </div>

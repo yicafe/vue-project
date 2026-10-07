@@ -17,6 +17,8 @@ import MessageItem from '../components/MessageItem.vue'//留言板（可复用�
 import ImageDisplay from'../components/ImageDisplay.vue'//图片显示组件（可复用）
 import WechatQrcode from'../components/WechatQrcode.vue'
 import demo from '../views/demo.vue'//demo
+import MagnifierViewer from '../components/MagnifierViewer.vue';
+import RedHatOS from '@/components/RedHatOS.vue'
 // 定义一个路由数组，统一管理路由
 const routes = [
     {
@@ -99,6 +101,19 @@ const routes = [
         name: 'demo',
         component: demo // 对应的组件
     },
+                       {
+        path: '/MagnifierViewer', // demo
+        name: 'MagnifierViewer',
+        component: MagnifierViewer // 对应的组件
+    },
+
+                           {
+        path: '/MagnifierViewer', // demo
+        name: 'MagnifierViewer',
+        component: MagnifierViewer // 对应的组件
+    },
+    
+    { path: '/os', component: RedHatOS },
     // ...
 ]
 

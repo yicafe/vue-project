@@ -2,7 +2,7 @@
   <!-- 外层容器 -->
   <div class="container p-4 mx-auto">
     <!-- 响应式网格布局 -->
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
       <!-- 帖子卡片循环 -->
       <div v-for="post in posts" :key="post.id"
         class="transition-all duration-300 shadow-md cursor-pointer bg-gray rounded-xl hover:shadow-xl hover:bg-gray-50"
